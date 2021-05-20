@@ -1,0 +1,142 @@
+.App {
+  display: grid;
+  height: 100vh;
+  min-width: 320px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+
+  .header {
+    grid-area: header;
+    background-color: #85abf7;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    .logo-link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: honeydew;
+      img {
+        height: 50px;
+      }
+    }
+  }
+
+  .main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .weather-display {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .current-city {
+        margin-top: 1rem;
+        font-size: 2rem;
+      }
+
+      .city-search {
+        margin: 1rem auto;
+        font-size: 1.5rem;
+        &-input {
+          margin-left: 1rem;
+          width: 200px;
+          padding: 5px;
+        }
+      }
+
+      .weather-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 15px;
+        border: aquamarine solid 2px;
+        border-radius: 10px;
+        .weather-display-box {
+          width: 100px;
+          margin: 20px;
+          cursor: pointer;
+          text-decoration: none;
+          color: rgb(29, 29, 29);
+
+          .icon {
+            width: 60px;
+            margin: auto;
+            img {
+              width: 100%;
+            }
+          }
+
+          .temperature-high {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .active {
+        border-radius: 20px;
+        background-color: rgba(167, 164, 164, 0.3);
+      }
+
+      .hourly-forecast {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        .hourly-forecast-day {
+          font-size: 5rem;
+          color: grey;
+        }
+
+        .hourly-forecast-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin: 10px auto;
+
+          .hourly-forecast-box {
+            margin: 20px;
+            .icon {
+              width: 80px;
+
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .out-of-range {
+    margin: 2rem auto;
+    .message {
+      margin: 1rem;
+      font-size: 3.5rem;
+    }
+    &-picture {
+      width: 350px;
+      border-radius: 5px;
+    }
+  }
+
+  .footer {
+    grid-area: footer;
+    min-height: 60px;
+    background-color: rgb(149, 231, 231);
+  }
+}
