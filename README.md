@@ -7,6 +7,11 @@ If weather from another city is desired, find it's id and paste it.
 
 Data comes from [Open Weather Map](https://openweathermap.org/) 5 day forecast Api.
 
+## Improvements
+
+Get the city Id from an API or a (big)file, while searching for city name.
+Convert UTC time to the time of the city searched.
+
 ## Available Scripts
 
 In the project directory, you can run:

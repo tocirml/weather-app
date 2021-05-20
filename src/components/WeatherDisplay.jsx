@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
 import WeatherDisplayBox from './WeatherDisplayBox';
 import { weatherApiUrl, weatherApiKey } from '../constants';
-import { groupDataPerDay, parseDayData } from '../utils/utilities';
+import {
+  groupDataPerDay,
+  parseDayData,
+  parseToTempDate,
+} from '../utils/utilities';
 import HourlyForecast from './HourlyForecast';
 import CitySearch from './CitySearch';
 import OutOfRange from './OutOfRange';
+import TemperatureGraphic from './TemperatureGraphic';
 
 // const cityId = '5879092';
 
@@ -51,7 +56,10 @@ const WeatherDisplay = props => {
           </div>
 
           {days[hourlyDay] ? (
-            <HourlyForecast hourlyForecast={days[hourlyDay]} />
+            <>
+              <HourlyForecast hourlyForecast={days[hourlyDay]} />
+              <TemperatureGraphic data={parseToTempDate(days[hourlyDay])} />
+            </>
           ) : (
             day && <OutOfRange /> // API cant see more than 5 days ahead, so this will display when checking a day out of range
           )}

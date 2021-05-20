@@ -87,3 +87,12 @@ export const parseToDay = date => {
 export const parstToDayName = dayAbrv => {
   return days[dayAbrv];
 };
+
+export const parseToTempDate = data => {
+  return data.map(dayData => {
+    return {
+      x: dayData.dt_txt,
+      y: kevinToFahrenheit(dayData.main.temp),
+    };
+  });
+};
