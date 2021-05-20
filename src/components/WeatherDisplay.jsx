@@ -57,7 +57,9 @@ const WeatherDisplay = props => {
           {days[hourlyDay] ? (
             <>
               <HourlyForecast hourlyForecast={days[hourlyDay]} />
-              <TemperatureGraphic data={parseToTempDate(days[hourlyDay])} />
+              <div className="xyzchart">
+                <TemperatureGraphic data={parseToTempDate(days[hourlyDay])} />
+              </div>
             </>
           ) : (
             day && <OutOfRange /> // API cant see more than 5 days ahead, so this will display when checking a day out of range

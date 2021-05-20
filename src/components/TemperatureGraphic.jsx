@@ -33,7 +33,7 @@ const TemperatureGraphic = ({ data }) => {
           orientation="bottom"
           tickLabelProps={() => ({ dy: tickLabelOffset })}
           left={10}
-          numTicks={8}
+          numTicks={4}
         />
         <Axis
           hideAxisLine
