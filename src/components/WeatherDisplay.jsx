@@ -24,7 +24,6 @@ const WeatherDisplay = props => {
     fetch(`${weatherApiUrl}?id=${cityId}&appid=${weatherApiKey}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         const chunkList = groupDataPerDay(data.list);
         if (data.city)
           setCurrentCity(`${data.city.name}, ${data.city.country} Weather`);
